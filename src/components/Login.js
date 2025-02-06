@@ -37,7 +37,7 @@ const Login = () => {
   return (
     <div className="h-[100vh] flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl font-semibold mb-6 text-[#891C69]">
-        Login To Manage Your Courses
+        Login To Learning Management System
       </h1>
       <p
         ref={errRef}
@@ -87,7 +87,7 @@ const Login = () => {
         <div className="flex justify-between px-4">
           <p className="text-sm text-gray-500 ">Don't have an account?</p>
           <Link
-            to={"/login"}
+            to={"/"}
             className="text-sm text-[#891C69] hover:underline"
           >
             Register
