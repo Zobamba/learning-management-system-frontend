@@ -90,7 +90,7 @@ const AdminPanel = () => {
         loginSignUp={loginSignUp}
         setLoginSignUp={setLoginSignUp}
         selectedLink="home"
-        getStarted={false}
+        getStarted={true}
       />
 
       {loginSignUp && <LoginSIgnUp closeModal={closeModal} />}
