@@ -1,7 +1,7 @@
 const CourseProgress = ({ progress }) => {
   if (!progress) {
     return (
-      <div className="flex flex-col items-center justify-center h-full p-4 rounded-md p-4 shadow-sm bg-white">
+      <div className="flex flex-col items-center justify-center h-full p-4 rounded-md">
         <svg
           className="h-16 w-16 text-[#891C69] mb-4"
           xmlns="http://www.w3.org/2000/svg"

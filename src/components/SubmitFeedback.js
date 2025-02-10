@@ -35,7 +35,7 @@ const SubmitFeedback = ({ courseId, closeModal }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-md shadow-md w-96">
         <h2 className="text-lg font-semibold mb-4">Submit Your Feedback</h2>
         {errMsg && <p className="text-red-500 text-sm mb-2">{errMsg}</p>}
