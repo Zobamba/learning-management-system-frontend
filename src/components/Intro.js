@@ -1,9 +1,6 @@
-import learn1 from "../assets/learn1.jpg";
-
 const Intro = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between mb-8 w-[90%] h-auto md:h-[20rem] mx-auto">
-      {/* Text Section */}
       <div className="flex flex-col items-center justify-center bg-gray-100 space-y-4 px-4 py-6 h-auto md:h-full w-full md:w-1/2">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center md:text-left">
@@ -18,7 +15,6 @@ const Intro = ({ searchTerm, setSearchTerm }) => {
           </p>
         </div>
 
-        {/* Search Input */}
         <div className="relative w-[90%] sm:w-[80%] md:w-[50%] mx-auto mt-4">
           <input
             type="text"
@@ -44,10 +40,9 @@ const Intro = ({ searchTerm, setSearchTerm }) => {
         </div>
       </div>
 
-      {/* Image Section */}
       <div className="h-[12rem] md:h-full w-full md:w-1/2 mt-4 md:mt-0">
         <img
-          src={learn1}
+          src="https://res.cloudinary.com/ddt4oo78m/image/upload/v1739203120/learn1_dlivth.jpg"
           alt="User Icon"
           className="w-full h-full object-cover rounded-lg"
         />

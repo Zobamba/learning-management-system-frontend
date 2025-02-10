@@ -6,9 +6,10 @@ const LoginSIgnUp = ({ closeModal }) => {
 
   const logOut = (e) => {
     e.preventDefault();
-    localStorage.removeItem("token");
-    window.location.reload();
+    const itemsToRemove = ["token", "userId"];
+    itemsToRemove.forEach((item) => localStorage.removeItem(item));
     closeModal();
+    window.location.reload();
   };
   return (
     <div
@@ -22,13 +23,13 @@ const LoginSIgnUp = ({ closeModal }) => {
         {!token && (
           <>
             <Link
-              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-full bg-gray-200 hover:bg-gray-300 text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
+              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-md bg-gray-200 hover:bg-gray-300 text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
               to="/login"
             >
               LOGIN
             </Link>
             <Link
-              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-full bg-[#891C69] hover:bg-[#6e1455] text-white font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
+              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-md bg-[#891C69] hover:bg-[#6e1455] text-white font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
               to="/register"
             >
               SIGNUP
@@ -36,13 +37,13 @@ const LoginSIgnUp = ({ closeModal }) => {
           </>
         )}
         <Link
-          className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-full bg-gray-200 hover:bg-gray-300] text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
+          className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-md bg-gray-200 hover:bg-gray-300] text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
           to="/admin"
         >
           VISIT ADMIN PANEL
         </Link>
         <Link
-          className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-full bg-[#891C69] hover:bg-[#6e1455] text-white font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
+          className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-md bg-[#891C69] hover:bg-[#6e1455] text-white font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
           to="/courses"
         >
           TOP RATED COURSES ⭐️
@@ -51,7 +52,7 @@ const LoginSIgnUp = ({ closeModal }) => {
           <>
             <button
               onClick={logOut}
-              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-full bg-gray-200 hover:bg-gray-300 text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
+              className="flex items-center justify-center h-[2.3rem] w-[13rem] rounded-md bg-gray-200 hover:bg-gray-300 text-[#891C69] font-medium text-[15px] font-montserrat leading-[1.295rem] text-center"
             >
               LOGOUT
             </button>

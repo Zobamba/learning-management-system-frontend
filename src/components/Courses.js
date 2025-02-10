@@ -25,6 +25,14 @@ const Courses = () => {
 
         if (response.data) {
           setCourses(response.data.data);
+          localStorage.setItem("courses", JSON.stringify(response.data.data));
+        } else {
+          const localData = localStorage.getItem("courses");
+          if (localData) {
+            setCourses(JSON.parse(localData));
+          } else {
+            setErrMsg("No courses found");
+          }
         }
       } catch (err) {
         setErrMsg(err.response?.data?.message || "Error fetching data");
