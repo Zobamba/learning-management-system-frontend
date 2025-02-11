@@ -40,15 +40,17 @@ const FeedbackList = ({ closeModal, feedbackList, getUserDetails }) => {
                 className=" flex items-center justify-between bg-gray-100 px-4 py-2 rounded shadow-md"
               >
                 <div className="flex flex-col">
-                  {user && (
-                    <div className="mt-2 flex items-center space-x-2">
-                      <img
-                        src={userPlaceholder}
-                        alt="User avatar"
-                        className="w-10 h-10 rounded-full"
-                      />
+                  <div className="mt-2 flex items-center space-x-2">
+                    <img
+                      src={userPlaceholder}
+                      alt="User avatar"
+                      className="w-10 h-10 rounded-full"
+                    />
+                    {user ? (
                       <div>
-                        <p className="font-semibold">{user.name}</p>
+                        <p className="font-semibold">
+                          {user.first_name + " " + user.last_name || "John Doe"}
+                        </p>
                         <p className="text-sm text-gray-500">
                           {new Intl.DateTimeFormat("en-US", {
                             weekday: "short",
@@ -58,8 +60,20 @@ const FeedbackList = ({ closeModal, feedbackList, getUserDetails }) => {
                           }).format(new Date(feedback.created_at))}
                         </p>
                       </div>
-                    </div>
-                  )}
+                    ) : (
+                      <div>
+                        <p className="font-semibold">John Doe</p>
+                        <p className="text-sm text-gray-500">
+                          {new Intl.DateTimeFormat("en-US", {
+                            weekday: "short",
+                            month: "short",
+                            day: "2-digit",
+                            year: "numeric",
+                          }).format(new Date(feedback.created_at))}
+                        </p>
+                      </div>
+                    )}
+                  </div>
 
                   <div className="flex items-center mt-4">
                     {[...Array(5)].map((_, i) => (
