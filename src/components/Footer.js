@@ -10,7 +10,7 @@ const Footer = () => {
     <div className="w-full bg-gradient-to-r from-[#891C69] to-[#6e1455] text-white py-10 text-center">
       {" "}
       <div className="w-[90%] flex items-center justify-between max-w-screen-xl mx-auto">
-        <div className="space-y-4">
+        <div className="space-y-4 h-[11rem]">
           <h4 className="text-lg font-bold text-white">Company</h4>
           <ul className="space-y-2">
             <li>
@@ -31,7 +31,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="space-y-4 ">
+        <div className="space-y-4 h-[11rem]">
           <h4 className="text-lg font-bold text-white">Services</h4>
           <ul className="space-y-2">
             <li>
@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 h-[11rem]">
           <h4 className="text-lg font-bold text-white">Our Socials</h4>
           <ul className="space-y-2">
             <li className="flex items-center justify-center space-x-3">
