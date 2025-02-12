@@ -14,7 +14,7 @@ const CourseContentCard = ({
   return (
     <div className="rounded-xl shadow-lg overflow-hidden bg-gray-100 border border-gray-200 flex flex-col transform transition duration-300 hover:shadow-xl hover:scale-105">
       <div
-        className={`border rounded-md p-3 shadow-sm ${
+        className={`border rounded-md p-3 shadow-sm h-[10rem]  ${
           isCompleted ? "bg-green-100" : ""
         }`}
       >
@@ -24,7 +24,7 @@ const CourseContentCard = ({
             Video
           </a>
         </p>
-        <p className="text-sm text-gray-600">Quiz: {content.quiz}</p>
+        <p className="text-sm text-gray-600 h-[3rem] max-h-[3rem] overflow-y-scroll">Quiz: {content.quiz}</p>
         <button
           onClick={() => handleUpdateProgress(course._id, content._id)}
           className={`mt-2 text-sm px-2 py-1 border border-[#891C69] rounded-md 

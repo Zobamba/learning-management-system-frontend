@@ -1,6 +1,6 @@
 const Intro = ({ searchTerm, setSearchTerm }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between mb-8 w-[90%] h-auto md:h-[20rem] mx-auto">
+    <div className="flex flex-col md:flex-row items-center justify-between mb-8 w-[90%] h-auto md:h-[20rem] max-w-screen-xl mx-auto">
       <div className="flex flex-col items-center justify-center bg-gray-100 space-y-4 px-4 py-6 h-auto md:h-full w-full md:w-1/2">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center md:text-left">
@@ -44,7 +44,7 @@ const Intro = ({ searchTerm, setSearchTerm }) => {
         <img
           src="https://res.cloudinary.com/ddt4oo78m/image/upload/v1739203120/learn1_dlivth.jpg"
           alt="User Icon"
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

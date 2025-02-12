@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ loginSignUp, setLoginSignUp, selectedLink, getStarted }) => {
   return (
     <header className="w-full flex justify-evenly items-center mb-8 pb-4 shadow-sm">
-      <div className="flex items-center justify-between w-[90%]">
+      <div className="flex items-center justify-between w-[90%] max-w-screen-xl mx-auto">
         <div className="text-left">
           <Link to={"/"}>
             <h2 className="text-[#891C69] font-bold text-xl leading-[2.45rem] font-montserrat m-0">

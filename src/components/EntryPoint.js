@@ -64,7 +64,7 @@ const EntryPoint = () => {
 
       <Intro searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-      <div className="w-[90%]">
+      <div className="w-[90%] max-w-screen-xl mx-auto">
         <h2 className="text-3xl font-semibold mb-8 text-[#891C69]">
           Checkout Our Courses
         </h2>

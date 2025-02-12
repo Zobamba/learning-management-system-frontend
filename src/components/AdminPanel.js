@@ -104,7 +104,7 @@ const AdminPanel = () => {
         />
       )}
 
-      <div className="flex w-full justify-end pr-8 mt-6">
+      <div className="flex justify-end mt-4 w-[90%] max-w-screen-xl mx-auto">
         <button
           className="px-4 py-2 bg-[#891C69] text-white rounded-md hover:bg-[#6e1455]"
           onClick={() => setShowModal(true)}
@@ -113,104 +113,111 @@ const AdminPanel = () => {
         </button>
       </div>
 
-      <div className="relative w-[80%] sm:w-[50%] mx-auto mt-4">
-        <input
-          type="text"
-          placeholder="Search courses by title or description..."
-          className="w-full px-10 py-2 rounded-md text-gray-700 border border-[#891C69]"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M21 21l-4.35-4.35M16.5 10.5a6 6 0 11-12 0 6 6 0 0112 0z"
+      <div className="w-[90%] max-w-screen-xl mx-auto">
+        <div className="relative w-[80%] sm:w-[50%] mx-auto mt-4">
+          <input
+            type="text"
+            placeholder="Search courses by title or description..."
+            className="w-full px-10 py-2 rounded-md text-gray-700 border border-[#891C69]"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </svg>
-      </div>
-
-      <div className="flex flex-wrap gap-3 justify-center my-6">
-        {["All", "Technology", "Business", "Art", "Health"].map((category) => (
-          <button
-            key={category}
-            className={`px-4 py-2 rounded-md ${
-              selectedCategory === category
-                ? "bg-[#891C69] text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-[#891C69] hover:text-white"
-            }`}
-            onClick={() => filterCoursesByCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <span className="w-full text-sm text-gray-500">
-        {errMsg && (
-          <div className="bg-red-100 text-red-700 p-2 rounded mb-4">
-            {errMsg}
-          </div>
-        )}
-      </span>
-
-      <div className="w-[90%] text-start my-4">
-        {filteredCourses.length > 0 ? (
-          <h2 className="text-xl font-semibold text-[#891C69]">
-            {`Total Courses: ${filteredCourses.length}`}
-          </h2>
-        ) : (
-          <h2 className="text-xl font-semibold text-[#891C69]">
-            {`Total Courses: 0`}
-          </h2>
-        )}
-      </div>
-
-      {isLoading ? (
-        <div className="flex items-center justify-center">
           <svg
-            className="w-5 h-5 mr-2 animate-spin text-[#891C69]"
             xmlns="http://www.w3.org/2000/svg"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
             fill="none"
             viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
             <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-          Loading...
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-[90%] mb-8 ">
-          {filteredCourses.map((course) => (
-            <CourseCard
-              key={course._id}
-              title={course.title}
-              description={course.description}
-              image={course.image}
-              rating={course.rating}
-              courseId={course._id}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M21 21l-4.35-4.35M16.5 10.5a6 6 0 11-12 0 6 6 0 0112 0z"
             />
-          ))}
+          </svg>
         </div>
-      )}
+
+        <div className="flex flex-wrap gap-3 justify-center my-6">
+          {["All", "Technology", "Business", "Art", "Health"].map(
+            (category) => (
+              <button
+                key={category}
+                className={`px-4 py-2 rounded-md ${
+                  selectedCategory === category
+                    ? "bg-[#891C69] text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-[#891C69] hover:text-white"
+                }`}
+                onClick={() => filterCoursesByCategory(category)}
+              >
+                {category}
+              </button>
+            )
+          )}
+        </div>
+
+        <span className="w-full text-sm text-gray-500">
+          {errMsg && (
+            <div className="bg-red-100 text-red-700 p-2 rounded mb-4">
+              {errMsg}
+            </div>
+          )}
+        </span>
+
+        <div className="w-full text-start my-4">
+          {filteredCourses.length > 0 ? (
+            <h2 className="text-xl font-semibold text-[#891C69]">
+              {`Total Courses: ${filteredCourses.length}`}
+            </h2>
+          ) : (
+            <h2 className="text-xl font-semibold text-[#891C69]">
+              {`Total Courses: 0`}
+            </h2>
+          )}
+        </div>
+
+        {isLoading ? (
+          <div className="w-[100%] flex items-center justify-center pb-32 min-h-screen">
+            <div className="flex items-center justify-center mb-72">
+              <svg
+                className="w-5 h-5 mr-2 animate-spin text-[#891C69]"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              Loading...
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-xl mx-auto mb-8">
+            {filteredCourses.map((course) => (
+              <CourseCard
+                key={course._id}
+                title={course.title}
+                description={course.description}
+                image={course.image}
+                rating={course.rating}
+                courseId={course._id}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
       <Footer />
     </div>
   );
